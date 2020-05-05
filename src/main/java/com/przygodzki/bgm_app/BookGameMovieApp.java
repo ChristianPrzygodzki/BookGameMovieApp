@@ -9,5 +9,4 @@ public class BookGameMovieApp {
     public static void main(String[] args) {
         SpringApplication.run(BookGameMovieApp.class, args);
     }
-
 }

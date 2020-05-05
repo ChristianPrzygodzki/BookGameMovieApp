@@ -1,37 +1,30 @@
-package com.przygodzki.bgm_app.entity;
+package com.przygodzki.bgm_app.to;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+public class CommonTo {
 
-@MappedSuperclass
-public class CommonEntity {
+    protected Integer id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    protected String title;
 
-    private String title;
+    protected float rate;
 
-    private float rate;
+    protected String description;
 
-    private String description;
-
-    public CommonEntity() {
+    public CommonTo() {
     }
 
-    public CommonEntity(String title, float rate, String description){
+    public CommonTo(Integer id, String title, float rate, String description) {
+        this.id = id;
         this.title = title;
         this.rate = rate;
         this.description = description;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

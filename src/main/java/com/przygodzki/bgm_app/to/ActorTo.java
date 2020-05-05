@@ -1,26 +1,27 @@
-package com.przygodzki.bgm_app.entity;
+package com.przygodzki.bgm_app.to;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ActorTo {
 
-@Entity
-public class Actor {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
     private String surname;
 
-    public int getId() {
+    public ActorTo() {
+    }
+
+    public ActorTo(Integer id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
