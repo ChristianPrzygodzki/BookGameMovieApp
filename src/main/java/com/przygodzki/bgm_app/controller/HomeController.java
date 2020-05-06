@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class StartController {
+public class HomeController {
 
     public List<Book> books;
 
-    public StartController() {
+    public HomeController() {
         this.books = new ArrayList<>();
-        Book book1 = new Book("Bible", 10, "History of salvation.", "God");
-        Book book2 = new Book("Illiade", 9, "Legend of troyan war.", "Homer");
+        Book book1 = new Book(1, "Bible", 10, "History of salvation.", "God");
+        Book book2 = new Book(2, "Illiade", 9, "Legend of troyan war.", "Homer");
         books.add(book1);
         books.add(book2);
     }

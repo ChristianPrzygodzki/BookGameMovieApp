@@ -21,7 +21,8 @@ public class CommonEntity {
     public CommonEntity() {
     }
 
-    public CommonEntity(String title, float rate, String description){
+    public CommonEntity(Integer id, String title, float rate, String description){
+        this.id = id;
         this.title = title;
         this.rate = rate;
         this.description = description;

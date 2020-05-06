@@ -2,9 +2,11 @@ package com.przygodzki.bgm_app.service.implementation;
 
 import com.przygodzki.bgm_app.service.MovieService;
 import com.przygodzki.bgm_app.to.MovieTo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MovieServiceImpl implements MovieService {
 
     @Override

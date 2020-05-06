@@ -17,6 +17,14 @@ public class Movie extends CommonEntity {
     )
     private List<Actor> knownActors;
 
+    public Movie() {
+    }
+
+    public Movie(Integer id, String title, float rate, String description, List<Actor> knownActors) {
+        super(id, title, rate, description);
+        this.knownActors = knownActors;
+    }
+
     public List<Actor> getKnownActors() {
         return knownActors;
     }

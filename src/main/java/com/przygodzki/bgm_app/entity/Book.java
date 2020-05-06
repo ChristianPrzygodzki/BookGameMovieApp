@@ -10,8 +10,8 @@ public class Book extends CommonEntity {
     public Book() {
     }
 
-    public Book(String title, float rate, String description, String author) {
-        super(title, rate, description);
+    public Book(Integer id, String title, float rate, String description, String author) {
+        super(id, title, rate, description);
         this.author = author;
     }
 
