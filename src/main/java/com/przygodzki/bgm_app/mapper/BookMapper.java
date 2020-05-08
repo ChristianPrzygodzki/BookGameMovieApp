@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface BookMapper {
 
-    BookTo mapToTo(Book book);
+    BookTo mapToDto(Book book);
 
     Book mapToEntity(BookTo bookTo);
 
-    List<BookTo> mapToTo(List<Book> bookEntities);
+    List<BookTo> mapToDto(List<Book> bookEntities);
 
     List<Book> mapToEntity(List<BookTo> bookEntities);
 }

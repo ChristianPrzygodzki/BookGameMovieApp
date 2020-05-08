@@ -1,42 +1,57 @@
 package com.przygodzki.bgm_app.service.implementation;
 
+import com.przygodzki.bgm_app.entity.Book;
+import com.przygodzki.bgm_app.mapper.BookMapper;
+import com.przygodzki.bgm_app.repository.BookRepository;
 import com.przygodzki.bgm_app.service.BookService;
 import com.przygodzki.bgm_app.to.BookTo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Override
-    public List<BookTo> findAll() {
-        List<BookTo> list = new ArrayList<>();
-        BookTo book1 = new BookTo(1, "Pan Kleks", 5.0F, "Nie pamiętam o czym.", "Jan Brzechwa");
-        BookTo book2 = new BookTo(2, "Pan Hilary", 5.0F, "Okulary itd.", "Julian Tuwim");
-        list.add(book1);
-        list.add(book2);
-        return list;
+    private BookRepository bookRepository;
+
+    private BookMapper bookMapper;
+
+    @Autowired
+    public BookServiceImpl(BookRepository bookRepository, BookMapper bookMapper) {
+        this.bookRepository = bookRepository;
+        this.bookMapper = bookMapper;
     }
 
     @Override
-    public BookTo findById(Long id) {
-        return null;
+    public List<BookTo> findAll() {
+        return bookMapper.mapToDto(bookRepository.findAll());
+    }
+
+    @Override
+    public BookTo findById(Integer id) {
+        Optional<Book> book = bookRepository.findById(id);
+        if (!book.isPresent()) {
+            throw new NoSuchElementException("Nie ma książki o podanym id.");
+        }
+        return bookMapper.mapToDto(book.get());
     }
 
     @Override
     public List<BookTo> findByTitle(String title) {
-        return null;
+        return bookMapper.mapToDto(bookRepository.findByTitle(title));
     }
 
     @Override
     public BookTo save(BookTo book) {
-        return null;
+        return bookMapper.mapToDto(bookRepository.save(bookMapper.mapToEntity(book)));
     }
 
     @Override
-    public void delete(Long id) {
-
+    public void delete(Integer id) {
+        bookRepository.deleteById(id);
     }
 }

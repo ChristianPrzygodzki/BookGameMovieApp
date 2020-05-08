@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class GameMapperImpl implements GameMapper {
 
     @Override
-    public GameTo mapToTo(Game game) {
+    public GameTo mapToDto(Game game) {
         if (game != null) {
             return new GameTo(
                     game.getId(),
@@ -38,8 +38,8 @@ public class GameMapperImpl implements GameMapper {
     }
 
     @Override
-    public List<GameTo> mapToTo(List<Game> gameEntities) {
-        return gameEntities.stream().map(this::mapToTo).collect(Collectors.toList());
+    public List<GameTo> mapToDto(List<Game> gameEntities) {
+        return gameEntities.stream().map(this::mapToDto).collect(Collectors.toList());
     }
 
     @Override

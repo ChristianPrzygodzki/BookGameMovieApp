@@ -8,7 +8,7 @@ public interface MovieService {
 
     List<MovieTo> findAll();
 
-    MovieTo findById(Long id);
+    MovieTo findById(Integer id);
 
     List<MovieTo> findByTitle(String title);
 
@@ -16,7 +16,7 @@ public interface MovieService {
 
     // MovieTo update(MovieTo Movie??);
 
-    void delete(Long id);
+    void delete(Integer id);
 
     // public List<MovieTo> findByCriteria(String title, String author, String description);
 }

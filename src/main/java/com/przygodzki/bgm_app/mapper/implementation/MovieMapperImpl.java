@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class MovieMapperImpl implements MovieMapper {
     
     @Override
-    public MovieTo mapToTo(Movie movie) {
+    public MovieTo mapToDto(Movie movie) {
         if (movie != null) {
             return new MovieTo(
                     movie.getId(),
@@ -38,8 +38,8 @@ public class MovieMapperImpl implements MovieMapper {
     }
 
     @Override
-    public List<MovieTo> mapToTo(List<Movie> movieEntities) {
-        return movieEntities.stream().map(this::mapToTo).collect(Collectors.toList());
+    public List<MovieTo> mapToDto(List<Movie> movieEntities) {
+        return movieEntities.stream().map(this::mapToDto).collect(Collectors.toList());
     }
 
     @Override

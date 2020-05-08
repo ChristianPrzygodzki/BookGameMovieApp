@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface MovieMapper {
 
-    MovieTo mapToTo(Movie movie);
+    MovieTo mapToDto(Movie movie);
 
     Movie mapToEntity(MovieTo movieTo);
 
-    List<MovieTo> mapToTo(List<Movie> movieEntities);
+    List<MovieTo> mapToDto(List<Movie> movieEntities);
 
     List<Movie> mapToEntity(List<MovieTo> movieEntities);
 }

@@ -8,7 +8,7 @@ public interface BookService {
 
     List<BookTo> findAll();
 
-    BookTo findById(Long id);
+    BookTo findById(Integer id);
 
     List<BookTo> findByTitle(String title);
 
@@ -16,7 +16,7 @@ public interface BookService {
 
     // BookTo update(BookTo book??);
 
-    void delete(Long id);
+    void delete(Integer id);
 
     // public List<BookTo> findByCriteria(String title, String author, String description);
 }

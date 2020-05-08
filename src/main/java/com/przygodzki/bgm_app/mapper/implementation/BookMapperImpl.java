@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class BookMapperImpl implements BookMapper {
 
     @Override
-    public BookTo mapToTo(Book book) {
+    public BookTo mapToDto(Book book) {
         if (book != null) {
             return new BookTo(
                     book.getId(),
@@ -39,8 +39,8 @@ public class BookMapperImpl implements BookMapper {
     }
 
     @Override
-    public List<BookTo> mapToTo(List<Book> bookEntities) {
-        return bookEntities.stream().map(this::mapToTo).collect(Collectors.toList());
+    public List<BookTo> mapToDto(List<Book> bookEntities) {
+        return bookEntities.stream().map(this::mapToDto).collect(Collectors.toList());
     }
 
     @Override

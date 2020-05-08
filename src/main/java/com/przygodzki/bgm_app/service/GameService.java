@@ -8,7 +8,7 @@ public interface GameService {
 
     List<GameTo> findAll();
 
-    GameTo findById(Long id);
+    GameTo findById(Integer id);
 
     List<GameTo> findByTitle(String title);
 
@@ -16,7 +16,7 @@ public interface GameService {
 
     // GameTo update(GameTo Game??);
 
-    void delete(Long id);
+    void delete(Integer id);
 
     // public List<GameTo> findByCriteria(String title, String description);
 }
