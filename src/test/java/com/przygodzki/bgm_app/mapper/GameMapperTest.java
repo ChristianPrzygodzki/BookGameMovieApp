@@ -52,7 +52,7 @@ public class GameMapperTest {
         final Integer expectedId = 33;
         final String expectedTitle = "Battlefield 1942";
         final float expectedRate = 6.0F;
-        final String expectedDescription = "Weź udział w bitwie II wojny światowej.";
+        final String expectedDescription = "Weź udział w bitwach II wojny światowej.";
         final GameFormat expectedFormat = GameFormat.CD;
         GameTo gameTo = new GameTo(expectedId, expectedTitle, expectedRate, expectedDescription, expectedFormat);
 
