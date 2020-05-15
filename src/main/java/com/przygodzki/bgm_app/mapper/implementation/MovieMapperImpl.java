@@ -1,8 +1,10 @@
 package com.przygodzki.bgm_app.mapper.implementation;
 
 import com.przygodzki.bgm_app.entity.Movie;
+import com.przygodzki.bgm_app.mapper.ActorMapper;
 import com.przygodzki.bgm_app.mapper.MovieMapper;
 import com.przygodzki.bgm_app.to.MovieTo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,7 +12,14 @@ import java.util.stream.Collectors;
 
 @Component
 public class MovieMapperImpl implements MovieMapper {
-    
+
+    private ActorMapper actorMapper;
+
+    @Autowired
+    public MovieMapperImpl(ActorMapper actorMapper) {
+        this.actorMapper = actorMapper;
+    }
+
     @Override
     public MovieTo mapToDto(Movie movie) {
         if (movie != null) {
@@ -19,7 +28,7 @@ public class MovieMapperImpl implements MovieMapper {
                     movie.getTitle(),
                     movie.getRate(),
                     movie.getDescription(),
-                    movie.getKnownActors());
+                    actorMapper.mapToDto(movie.getKnownActors()));
         }
         return null;
     }
@@ -32,7 +41,7 @@ public class MovieMapperImpl implements MovieMapper {
                     movieTo.getTitle(),
                     movieTo.getRate(),
                     movieTo.getDescription(),
-                    movieTo.getKnownActors());
+                    actorMapper.mapToEntity(movieTo.getKnownActors()));
         }
         return null;
     }

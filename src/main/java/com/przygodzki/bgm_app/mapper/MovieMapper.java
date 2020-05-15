@@ -13,5 +13,5 @@ public interface MovieMapper {
 
     List<MovieTo> mapToDto(List<Movie> movieEntities);
 
-    List<Movie> mapToEntity(List<MovieTo> movieEntities);
+    List<Movie> mapToEntity(List<MovieTo> movieTos);
 }

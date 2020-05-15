@@ -16,6 +16,15 @@ public class Actor {
 
     private String surname;
 
+    public Actor() {
+    }
+
+    public Actor(Integer id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
+
     public int getId() {
         return id;
     }

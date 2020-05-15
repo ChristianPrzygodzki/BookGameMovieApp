@@ -13,6 +13,6 @@ public interface GameMapper {
 
     List<GameTo> mapToDto(List<Game> gameEntities);
 
-    List<Game> mapToEntity(List<GameTo> gameEntities);
+    List<Game> mapToEntity(List<GameTo> gameTos);
     
 }
