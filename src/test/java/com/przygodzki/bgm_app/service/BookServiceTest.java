@@ -11,8 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -92,5 +91,19 @@ public class BookServiceTest {
         assertTrue(bookRepository.findById(bookToSave.getId()).isPresent());
         assertEquals(numberOfBooksBeforeSaving + 1, bookRepository.findAll().size());
 
+    }
+
+    @Test
+    public void shouldDeleteBookFromDB(){
+        // given
+        int bookToDeleteId = 4;
+        int expectedSizeOfBookList = bookRepository.findAll().size() - 1;
+
+        // when
+        bookService.delete(bookToDeleteId);
+
+        // then
+        assertFalse(bookRepository.findById(4).isPresent());
+        assertEquals(expectedSizeOfBookList, bookRepository.findAll().size());
     }
 }
