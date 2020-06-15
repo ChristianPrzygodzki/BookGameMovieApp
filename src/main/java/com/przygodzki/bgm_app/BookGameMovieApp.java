@@ -24,7 +24,5 @@ public class BookGameMovieApp {
 
     public static void main(String[] args) {
         SpringApplication.run(BookGameMovieApp.class, args);
-        /*List<Game> lista = gameRepo.findAll();
-        System.out.println(lista.size());*/
     }
 }
