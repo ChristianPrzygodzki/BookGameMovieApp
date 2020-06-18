@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.przygodzki</groupId>
-    <artifactId>book_game_movie_app</artifactId>
+    <artifactId>book-game-movie-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Book Game Movie App</name>
     <description>Managing books, games and movies I experienced.</description>
@@ -19,6 +19,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
