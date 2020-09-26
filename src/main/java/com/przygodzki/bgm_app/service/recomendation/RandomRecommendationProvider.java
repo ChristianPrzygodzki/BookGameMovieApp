@@ -8,11 +8,14 @@ import com.przygodzki.bgm_app.to.CommonTo;
 import com.przygodzki.bgm_app.to.GameTo;
 import com.przygodzki.bgm_app.to.MovieTo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Component
 public class RandomRecommendationProvider implements RecommendationProvider {
 
     private final BookService bookService;
@@ -38,6 +41,7 @@ public class RandomRecommendationProvider implements RecommendationProvider {
     }
 
     private List<CommonTo> getAllHighlyRatedProducts(){
+        possibleRecomendations = new ArrayList<>();
         for(BookTo book : bookService.findAll()){
             if(book.getRate() >= 7){
                 possibleRecomendations.add(book);
